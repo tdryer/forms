@@ -29,8 +29,8 @@ app.configure(function() {
     app.set('views', __dirname);
     app.set('view engine', 'jade');
 
-    // This will work with or without the bodyDecoder.
-    app.use(express.bodyDecoder());
+    // This will work with or without the bodyParser.
+    app.use(express.bodyParser());
     app.use(app.router);
 });
 
