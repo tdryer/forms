@@ -12,10 +12,11 @@ var test_input = function(type){
             '<input type="' + type + '" name="field2" id="form2_field2"' +
             ' class="test1 test2 test3" />'
         );
+        
         test.equals(
             forms.widgets[type]().toHTML('field1', {value:'some value'}),
             '<input type="' + type + '" name="field1" id="id_field1"' +
-            ' value="some value" />'
+            (type !== 'password' ? ' value="some value" />' : ' />')
         );
         test.equals(forms.widgets[type]().type, type);
         test.done();
